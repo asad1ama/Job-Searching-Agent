@@ -12,7 +12,7 @@
 
 ## 🎯 Problem This Agent Solves
 
-Job hunting as a fresher in India is broken:
+Job hunting as a fresher  is broken:
 - Manually checking 7 job sites daily = 2-3 hours wasted
 - Sending same generic resume everywhere = low callback rate
 - Never writing cover letters = missing key differentiator
