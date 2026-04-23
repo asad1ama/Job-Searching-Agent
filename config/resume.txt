@@ -1,0 +1,85 @@
+ASAD AMANULLAH
+Phone: +91-9102575637
+Email: asad.ama339@gmail.com
+LinkedIn: https://www.linkedin.com/in/asad-amanullah-780852230/
+GitHub: https://github.com/asad1ama
+
+Current Location: India
+Nationality: Indian
+Visa Status: Open to Work / Requires Sponsorship
+Availability: Immediate Joiner
+
+--------------------------------------------------
+
+PROFESSIONAL SUMMARY
+Computer Science graduate with strong foundation in software development, data structures,AI/ML, AWS, CLOUD, AZURE, Devops, CI/CD and backend systems. Experienced in building scalable applications and AI-powered solutions. Skilled in API development, database management, and deploying production-ready systems. Strong problem-solving ability with interest in cloud, AI, and high-performance systems.
+
+--------------------------------------------------
+
+TECHNICAL SKILLS
+Languages: C++, Python, JavaScript
+Core Concepts: Data Structures, Algorithms, OOP, System Design Basics
+Backend: Node.js, Express.js, REST APIs
+Databases: PostgreSQL, MongoDB
+AI Tools: OpenAI API, LLM Integration, Prompt Engineering
+Tools: Git, GitHub, Linux, CI/CD (GitHub Actions)
+
+--------------------------------------------------
+
+EXPERIENCE
+
+Artificial Intelligence Engineer
+BenevolentAI
+Aug 2025 – Jan 2026
+- Designed and optimized AI-driven data pipelines improving system performance.
+- Analyzed model outputs to identify inefficiencies and improve workflows.
+- Automated repetitive tasks using AI tools to enhance productivity.
+- Collaborated in debugging and improving system reliability.
+
+Software Developer Intern
+Zylu Business Solutions Pvt. Ltd.
+Apr 2024 – Jun 2024
+- Developed backend features and REST APIs using Node.js.
+- Optimized SQL queries reducing latency by approximately 20%.
+- Assisted in CI/CD pipeline integration and deployment.
+- Debugged system issues and improved performance.
+
+--------------------------------------------------
+
+PROJECTS
+
+Resume SaaS Platform
+- Built full-stack SaaS using Next.js, TypeScript, and PostgreSQL.
+- Integrated OpenAI API for ATS scoring, keyword analysis, and feedback generation.
+- Implemented authentication using Google OAuth and NextAuth.
+- Designed payment system using Razorpay and deployed with CI/CD.
+- Achieved 10+ users including paying customers.
+
+Connext – Real-Time Video Communication App
+- Developed real-time video calling system using WebRTC and Agora SDK.
+- Supported multi-user communication with optimized latency.
+- Improved performance through efficient event handling.
+
+Emotion-Based Music Player
+- Built AI-based system using OpenCV for real-time emotion detection.
+- Designed efficient processing pipeline for real-time performance.
+
+--------------------------------------------------
+
+EDUCATION
+
+Bachelor of Engineering in Computer Science
+Chandigarh University
+2021 – 2025
+
+Class XII (CBSE)
+P.P. Public School, Bihar
+2020
+Percentage: 74.6%
+
+Class X (CBSE)
+P.P. Public School, Bihar
+2018
+Percentage: 87.3%
+
+--------------------------------------------------
