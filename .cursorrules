@@ -1,0 +1,74 @@
+# ============================================
+# Job Application Agent - Cursor Rules
+# ============================================
+
+## Project Purpose
+This is an AI-powered Job Application Automation Agent.
+It scrapes jobs from 7 platforms (Naukri, Internshala, LinkedIn,
+Indeed, Glassdoor, Wellfound, RemoteOK), ranks them using Groq LLM,
+tailors resumes per job, generates cover letters, analyzes skill gaps,
+and sends Telegram notifications.
+
+## Tech Stack
+- Python 3.10+
+- Groq API (llama-3.3-70b-versatile) - Free LLM
+- Playwright - Browser automation & scraping
+- Flask - Web interface (optional)
+- Schedule - Auto daily runs
+- Google Sheets API - Application tracking
+- Telegram Bot API - Phone notifications
+
+## Folder Structure
+- main.py              → Entry point (run this)
+- scheduler.py         → Auto daily scheduler
+- agent/               → Core orchestrator
+- scrapers/            → One file per platform
+- utils/               → Shared utilities
+- config/              → Resume + credentials (gitignored)
+- output/              → Generated files (gitignored)
+- logs/                → Run logs (gitignored)
+
+## Platforms Supported
+Indian: naukri, internshala
+Global: linkedin, indeed, glassdoor, wellfound, remoteok
+
+## Coding Guidelines
+- Always use environment variables for secrets
+- All scrapers return list of dicts with:
+  title, company, location, skills, description, url, platform
+- All Groq calls must have try/except with fallback
+- Use setup_logger() from utils/logger.py everywhere
+- All scrapers must have _get_sample_jobs() fallback
+
+## Adding a New Scraper
+1. Create scrapers/newsite_scraper.py
+2. Follow NaukriScraper pattern
+3. Add to agent/job_agent.py scrapers dict
+4. Add platform name to .env PLATFORMS list
+
+## Run Commands
+# Normal run
+python main.py
+
+# Scheduled daily run at 8am
+python scheduler.py
+
+# Install dependencies
+pip install -r requirements.txt
+playwright install chromium
+
+## Environment Setup
+cp .env.example .env
+# Fill in GROQ_API_KEY (free at console.groq.com)
+# Fill in TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID (optional)
+# Edit config/resume.txt with your resume
+
+## Performance Scoring (1-10,000)
+Score = Jobs_Found(2000) + Ranking(3000) + Tailoring(3000) + Speed(1000) + Platforms(1000)
+Current benchmark: 8000/10,000
+
+## Security
+- Never commit .env
+- Never commit config/google_creds.json
+- Never commit config/resume.txt
+- All secrets via environment variables only

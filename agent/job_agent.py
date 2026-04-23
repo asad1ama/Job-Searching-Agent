@@ -62,13 +62,23 @@ class JobAgent:
         all_jobs = []
 
         # Step 1: Scrape all platforms
+
+        # Global platforms ignore location setting
+        global_platforms = ["remoteok", "wellfound", "glassdoor"]
+
         for platform in self.config["platforms"]:
             platform = platform.strip()
             if platform not in self.scrapers:
                 logger.warning(f"⚠️ Unknown platform: {platform}")
                 continue
             logger.info(f"\n📡 Scraping {platform.upper()}...")
-            scraper = self.scrapers[platform](self.config)
+
+            # Override location for global platforms
+            platform_config = self.config.copy()
+            if platform in global_platforms:
+                platform_config["target_location"] = "Worldwide"
+
+            scraper = self.scrapers[platform](platform_config)
             try:
                 jobs = scraper.scrape()
                 logger.info(f"✅ Found {len(jobs)} jobs on {platform}")
