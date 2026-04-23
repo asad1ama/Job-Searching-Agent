@@ -188,5 +188,38 @@ python scheduler.py
 Runs every morning at 8am. Wake up to fresh job results.
 
 ---
+## 📸 Screenshots
+
+### 1️⃣ Terminal — Agent Starting
+![Terminal 1](assets/T1.png)
+
+### 2️⃣ Terminal — Scraping All 7 Platforms
+![Terminal 2](assets/T2.png)
+
+### 3️⃣ Terminal — AI Ranking + Score
+![Terminal 3](assets/T3.png)
+
+---
+
+### 4️⃣ HTML Report — Job Cards with Match Scores
+![Report 1](assets/R1.png)
+
+### 5️⃣ HTML Report — Skill Gap Analysis + Roadmap
+![Report 2](assets/R2.png)
+
+---
+
+### 6️⃣ Output Files — Generated Automatically
+![Output Files](assets/Output.png)
+
+> Tailored resumes + cover letters saved per company automatically
+
+---
+
+### 7️⃣ Telegram — Phone Notification
+![Telegram](assets/tel-1.png)
+
+> Results delivered to phone automatically — zero human input needed
+
 
 *Built with: Python · Groq llama-3.3-70b · Playwright · 7 Platforms*
