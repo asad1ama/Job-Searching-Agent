@@ -1,12 +1,88 @@
 # Quest Submission - FDE / APO Position
 
-**Candidate:** Asad Amanullah
+**Candidate:** Asad Amanullah  
 **Agent:** Job Application Automation Agent  
 **GitHub:** https://github.com/asad1ama/Job-Searching-Agent
 
 ---
 
-## ✅  Benchmark Comparison
+## ✅ Requirement 1 — Build Your Own Agent
+
+Full pipeline agent built in Python:
+- Scrapes 7 platforms (Indian + Global)
+- AI ranks jobs by resume fit
+- Tailors resume per job
+- Generates cover letter per company
+- Runs skill gap analysis
+- Sends Telegram notification
+- Tracks in Google Sheets
+- Generates HTML dashboard
+- Runs on daily schedule
+
+---
+
+## ✅ Requirement 2 — Cursor-Based Setup
+
+`.cursorrules` included in root with:
+- Project purpose and architecture
+- Tech stack explanation
+- Folder structure
+- Coding conventions
+- Run commands
+- How to add new scrapers
+
+Open in Cursor → AI understands full codebase instantly.
+
+---
+
+## ✅ Requirement 3 — Security
+
+- All secrets in `.env` (gitignored)
+- `.env.example` has placeholders only
+- `config/google_creds.json` gitignored
+- `config/resume.txt` gitignored
+- `output/` gitignored
+- Zero secrets in any source file
+
+Verify: `grep -r "sk-\|AIza" .` returns nothing.
+
+---
+
+## ✅ Requirement 4 — Performance Metrics
+
+**Agent Score: 8,000 / 10,000**
+
+### Scoring Formula
+Score = A + B + C + D + E
+A = Jobs Found      (max 2,000) = jobs_found × 200 [capped at 10]
+B = Ranking Quality (max 3,000) = (avg_match_score / 100) × 3,000
+C = Resume Tailoring(max 3,000) = (tailored / total) × 3,000
+D = Speed Bonus     (max 1,000) = 1,000 if <60s | 500 if <120s
+E = Platform Spread (max 1,000) = 500 × unique_platforms
+
+### Sample Run Calculation
+
+| Component | Value | Score |
+|---|---|---|
+| Jobs Found | 46 jobs | 2,000/2,000 |
+| Ranking Quality | avg 75/100 | 2,250/3,000 |
+| Resume Tailoring | 5/5 tailored | 3,000/3,000 |
+| Speed | 90 seconds | 500/1,000 |
+| Platforms | 7 platforms | 1,000/1,000 |
+| **TOTAL** | | **8,000/10,000** |
+
+### Why This Formula
+
+Each component measures a real verifiable output:
+- **Jobs Found** — did the scraper actually work?
+- **Ranking Quality** — did AI produce useful relevance signals?
+- **Tailoring** — did every job get a custom resume?
+- **Speed** — is this faster than a human?
+- **Diversity** — does it search more than one source?
+
+---
+
+## ✅ Requirement 5 — Benchmark Comparison
 
 ### This Agent vs Default Cursor/Claude
 
@@ -19,7 +95,7 @@
 | Skill gap analysis | ❌ Not possible | ✅ AI powered roadmap |
 | Phone notifications | ❌ Not possible | ✅ Telegram bot |
 | Daily auto-scheduler | ❌ Not possible | ✅ Runs at 8am daily |
-| Track applications | ❌ No memory | ✅ Google Sheets |
+| Track applications | ❌ No memory | ✅ Google Sheets + JSON |
 | Indian platforms | ❌ None | ✅ Naukri + Internshala |
 | Global platforms | ❌ None | ✅ LinkedIn, Indeed, Glassdoor, Wellfound, RemoteOK |
 | Time per job | 15-30 minutes | < 2 minutes |
@@ -91,35 +167,36 @@ That is product thinking, not just engineering.
 - Before agent: 2-3 hours/day job hunting manually
 - After agent: 90 seconds/day, fully automated
 - Time saved: ~95% reduction
-- Quality improvement: Every application has tailored resume + cover letter
+- Quality: Every application has tailored resume + cover letter
 
 ---
 
 ## ✅ Requirement 7 — Documentation
 
-Full documentation is in README.md including:
+Full documentation in README.md including:
 - Problem statement and motivation
 - Complete pipeline explanation
 - Setup guide (install → configure → run)
 - Performance score formula
 - Benchmark table
-- Folder structure
+- Folder structure with every file explained
 - How to add new platforms
 - Security notes
 - Design decisions
+- Screenshots of terminal, report, output, Telegram
 
 ### Design Decisions
 
 | Decision | Reason |
 |---|---|
-| Groq over OpenAI | Free tier, fast inference, familiar from n8n project |
+| Groq over OpenAI | Free tier, fast inference |
 | Playwright over APIs | Naukri/Internshala have no public API |
 | 7 platforms | Cover both Indian + global job markets |
 | JSON fallback | Agent runs without Google Sheets setup |
 | Sample data fallback | Scraper failures don't kill the whole run |
 | Telegram bot | True autonomous agent — zero human input needed |
 | Scheduler | Wakes up, finds jobs, notifies — no human trigger |
-| Per-platform location | Indian sites search India, global sites search worldwide |
+| Per-platform location | Indian sites search India, global sites worldwide |
 | `.cursorrules` | Cursor understands full codebase instantly |
 
 ### Usage Examples
@@ -130,7 +207,7 @@ python main.py
 ```
 
 **Change target role:**
-TARGET_ROLE=Ai Engineer
+TARGET_ROLE=AI Engineer
 
 **Change location:**
 TARGET_LOCATION=Singapore
@@ -145,4 +222,4 @@ output/
 ├── report.html                    ← Visual dashboard
 ├── jobs_results.json              ← All results + skill analysis
 ├── 1_CompanyName_resume.txt       ← Tailored resume
-├── 1_CompanyName_cover_letter.txt ← Cover letter
+└── 1_CompanyName_cover_letter.txt ← Cover letter
